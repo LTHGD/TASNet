@@ -9,7 +9,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 import backbone.resnet.resnet as resnet
-#Channel Attention Block ######################
+#Channel Attention ######################
 class CA_Block(nn.Module):
     def __init__(self, in_dim):
         super(CA_Block, self).__init__()
@@ -68,7 +68,7 @@ class SA_Block(nn.Module):
         return out
 
 ###################################################################
-# ################## Context Exploration Block ####################
+# ################## Context Exploration ####################
 ###################################################################
 class Context_Exploration_Block(nn.Module):
     def __init__(self, input_channels):
@@ -142,7 +142,7 @@ class Context_Exploration_Block(nn.Module):
         return ce
 
 ###################################################################
-# ##################### Positioning Module ########################
+# ##################### Positioning ########################
 ###################################################################
 class Positioning(nn.Module):
     def __init__(self, channel):
@@ -160,7 +160,7 @@ class Positioning(nn.Module):
         return sab, map
 
 ###################################################################
-# ######################## Focus Module ###########################
+# ######################## Focus ###########################
 ###################################################################
 class Focus(nn.Module):
     def __init__(self, channel1, channel2):
